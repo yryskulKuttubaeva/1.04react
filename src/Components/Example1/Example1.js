@@ -1,30 +1,30 @@
 import { useState } from "react";
 
-function Example1 () {
-   const [A, number2]= useState ("");
-   const [B, number3]= useState ("");
+function Example1() {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+
+    const onFirstNameChange = (event) => {
+        setFirstName(event.target.value);
+    }
+    const onLastNameChange = (event) => {
+        setLastName(event.target.value);
+    }
 
 
 
-   const onFirstChange = (event) => {
-    number2 (event.target.value)
-   }
-   const onInputChange = (event) => {
-    number3(event.target.value);
-   }
-    
-    return (
+    return ( 
         <div className="Example1">
-            {A-B} <br/>
             <label>
                 A:
-                <input type="text" onChange = {onFirstChange}/>
-            </label>
+                <input type="text" onChange={onFirstNameChange} />
+            </label><br />
             <label>
                 B:
-                <input type="text" onChange = {onInputChange}/>
-            </label>
+                <input type="text" onChange={onLastNameChange} />
+            </label><br />
+        A + B = { Number(firstName) + Number(lastName) }
         </div>
-    );
+     );
 }
 export default Example1;
